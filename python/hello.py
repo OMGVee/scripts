@@ -1,13 +1,18 @@
-from Tkinter import *
+#!/usr/bin/env python3
+import unittest
+def hello_world():
+    #return ('hello world')
+    pass
+def calculate(a,b):
+    pass
+    #return a+b
 
-class Hello(Frame):
-	def __init__(self, master=None):
-		Frame.__init__(self, master)
-		self.pack()
-		self.make_widgets()
+#tests
+class myTests(unittest.TestCase):
+    def test_hello(self):
+        self.assertEqual(hello_world(), 'hello world')
+    def test_another(self):
+        self.assertEqual(calculate(5,7), 12)
 
-	def make_widgets(self):
-		widget = Button(self, text='Hoi', command=self.quit)
-		widget.pack(side=LEFT)
-
-if __name__ == '__main__': Hello().mainloop()
+if __name__ == '__main__':
+    unittest.main()
